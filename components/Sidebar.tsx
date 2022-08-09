@@ -3,7 +3,7 @@ import { TbChecklist } from "react-icons/tb";
 import { FiMenu } from "react-icons/fi";
 const Sidebar = () => {
   return (
-    <div className="bg-[#111828] h-screen col-span-1  ">
+    <div className="bg-[#111828] min-h-screen col-span-1  ">
       <main>
         {/* Header */}
         <div className="p-5 px-6 flex justify-between text-cyan-200 gap-5 items-center ">
