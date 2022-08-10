@@ -23,7 +23,6 @@ const Postt = ({ setPosts }: Props) => {
       profileImg: session?.user?.image || "https://links.papareact.com/gll",
       image: image,
       excerpt: excerpt,
-      link: "ai",
     };
 
     const result = await fetch(`/api/addPost`, {
