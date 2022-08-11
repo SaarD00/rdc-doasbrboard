@@ -34,7 +34,7 @@ const Postt = ({ setPosts }: Props) => {
 
     const json = await result.json();
 
-    toast.success("Tweet Posted", {
+    toast.success(" Posted", {
       icon: "💯",
     });
     return json;

@@ -19,6 +19,7 @@ const Home = ({ posts }: Props) => {
         <link rel="icon" href="/favicon.ico" />
         <Toaster />
       </Head>
+      <Toaster />
       <Modal posts={posts} />
     </div>
   );
