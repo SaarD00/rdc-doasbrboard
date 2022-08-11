@@ -2,8 +2,10 @@ import React from "react";
 import { TbChecklist } from "react-icons/tb";
 import { FiMenu } from "react-icons/fi";
 import { signIn, signOut, useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 const Sidebar = () => {
   const { data: session } = useSession();
+  const router = useRouter();
   return (
     <div className="bg-[#111828] min-h-screen col-span-1  ">
       <main>
@@ -43,6 +45,13 @@ const Sidebar = () => {
           <div className=" bg-[#28303d] flex items-center gap-5 p-2 rounded-lg text-white">
             <TbChecklist className="h-5 w-5" />
             <p className="font-semibold">Project</p>
+          </div>
+          <div
+            onClick={() => router.push("/create/post")}
+            className="  flex items-center gap-5 p-2 rounded-lg text-white"
+          >
+            <TbChecklist className="h-5 w-5" />
+            <p className="font-semibold">Upload</p>
           </div>
         </div>
       </main>
