@@ -91,14 +91,14 @@ const Postt = ({ setPosts }: Props) => {
                 />
               </div>
               <div className="gap-y-2 flex flex-col">
-                <p className="font-semibold">Subject</p>
+                <p className="font-semibold">Title</p>
                 <input
                   type="text"
                   onChange={(e) => {
                     setInput(e.target.value);
                   }}
                   value={input}
-                  placeholder="Enter The Subject Name"
+                  placeholder="Enter The Title"
                   className="bg-[#111828] rounded-lg outline-none py-1 px-10 text-white"
                 />
               </div>
@@ -125,6 +125,17 @@ const Postt = ({ setPosts }: Props) => {
                   className="bg-[#111828]  rounded-lg outline-none py-1 px-10 text-white"
                 />
               </div>
+              {/* <div className="gap-y-2 flex flex-col">
+                <p className="font-semibold">Subject</p>
+                <textarea
+                  onChange={(e) => {
+                    setExcerpt(e.target.value);
+                  }}
+                  value={excerpt}
+                  placeholder="write subject name in short form"
+                  className="bg-[#111828]  rounded-lg outline-none py-1 px-10 text-white"
+                />
+              </div> */}
               <div className="flex justify-center bg-indigo-600 py-2 rounded-full">
                 <button
                   type="submit"
