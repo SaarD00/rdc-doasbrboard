@@ -6,7 +6,7 @@ import { IoNotificationsOutline } from "react-icons/io5";
 const Header = () => {
   const { data: session } = useSession();
   return (
-    <div className="p-7 flex justify-between border-b shadow-md">
+    <div className="px-7 pt-3 flex justify-between   bg-gray-100 sticky top-0">
       <div className="flex gap-5">
         <AiOutlineCalendar className="h-7 w-7 text-gray-500" />
         <IoIosPeople className="h-7 w-7 text-gray-500" />

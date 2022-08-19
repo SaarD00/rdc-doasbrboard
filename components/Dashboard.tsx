@@ -1,14 +1,14 @@
 import React from "react";
 import Header from "./Header";
-import LargeCard from "./LargeCard";
-import Menu from "./Menu";
+import Stats from "./Stats";
 
 const Dashboard = () => {
   return (
-    <div className="col-span-5">
+    <div className="col-span-5 ">
       <Header />
-      <LargeCard />
-      <Menu />
+      <div className="col-span-5 p-10  ">
+        <Stats />
+      </div>
     </div>
   );
 };
