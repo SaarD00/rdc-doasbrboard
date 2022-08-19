@@ -4,6 +4,16 @@ import React from "react";
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 const Stats = () => {
   const optionssalesoverview = {
+    grid: {
+      show: true,
+      borderColor: "transparent",
+      strokeDashArray: 2,
+      padding: {
+        left: 0,
+        right: 0,
+        bottom: 0,
+      },
+    },
     plotOptions: {
       bar: {
         horizontal: false,
@@ -18,14 +28,26 @@ const Stats = () => {
       type: "solid",
       opacity: 1,
     },
-
+    chart: {
+      offsetX: -15,
+      toolbar: {
+        show: false,
+      },
+      foreColor: "#adb0bb",
+      fontFamily: "'DM Sans',sans-serif",
+      sparkline: {
+        enabled: false,
+      },
+    },
     dataLabels: {
       enabled: false,
     },
     markers: {
       size: 0,
     },
-
+    legend: {
+      show: false,
+    },
     xaxis: {
       type: "category",
       categories: [
@@ -81,7 +103,7 @@ const Stats = () => {
   ];
   return (
     <div className="bg-white p-2 px-5 rounded-lg">
-      <p>Uploadss </p>
+      <p>Uploads Stats </p>
       <Chart
         options={optionssalesoverview}
         series={seriessalesoverview}
