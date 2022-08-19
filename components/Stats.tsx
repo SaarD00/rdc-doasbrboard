@@ -103,7 +103,7 @@ const Stats = () => {
   ];
   return (
     <div className="bg-white p-2 px-5 rounded-lg">
-      <p>Uploads </p>
+      <p>Uploadss </p>
       <Chart
         options={optionssalesoverview}
         series={seriessalesoverview}
