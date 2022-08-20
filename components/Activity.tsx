@@ -7,6 +7,7 @@ import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import { Box, Card, Typography } from "@mui/material";
+import { useSession } from "next-auth/react";
 
 const activities = [
   {
@@ -37,8 +38,9 @@ const activities = [
 ];
 
 const Activity = () => {
+  
   return (
-    <div className="bg-white rounded-lg  shadow-sm mt-5 p-5 py-5">
+    <div className="bg-white rounded-3xl   shadow-lg mt-5 p-5 py-5">
       <p className="mb-2">Daily Activity</p>
       <Timeline
         sx={{

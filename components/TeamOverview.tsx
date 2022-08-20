@@ -42,7 +42,7 @@ const products = [
 
 const TeamOverview = () => {
   return (
-    <div className="bg-white rounded-lg px-20 py-10 w-full shadow-sm scale-90 mt-10 ">
+    <div className="bg-white rounded-3xl  px-20 py-10 w-full shadow-lg scale-90 mt-10 ">
       <p>Team</p>
       <Table
         aria-label="simple table"

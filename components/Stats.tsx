@@ -29,7 +29,7 @@ const Stats = () => {
     ["Dec", 12, 15],
   ];
   return (
-    <div className="bg-white  p-2 px-5 rounded-lg">
+    <div className="bg-white  p-10 rounded-3xl shadow-lg">
       {/* <Chart
         options={optionssalesoverview}
         series={seriessalesoverview}
@@ -39,7 +39,7 @@ const Stats = () => {
       <Chart
         chartType="Bar"
         width="100%"
-        height="350px"
+        height="360px"
         data={seriessalesoverview}
         options={optionssalesoverview}
       />

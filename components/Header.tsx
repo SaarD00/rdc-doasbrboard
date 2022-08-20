@@ -3,6 +3,7 @@ import React from "react";
 import { AiOutlineCalendar } from "react-icons/ai";
 import { IoIosPeople } from "react-icons/io";
 import { IoNotificationsOutline } from "react-icons/io5";
+import Hdropdown from "./Hdropdown";
 const Header = () => {
   const { data: session } = useSession();
   return (
@@ -12,24 +13,8 @@ const Header = () => {
         <IoIosPeople className="h-7 w-7 text-gray-500" />
       </div>
       {/* seperation */}
-      <div className="flex gap-10">
-        <div>
-          <IoNotificationsOutline className="h-7 w-7 text-gray-500" />
-        </div>
-        <div>
-          <div className="flex  gap-2">
-            <div className="flex flex-col items-end  ">
-              <p className="font-semibold text-lg">{session?.user?.name}</p>
-              <p className=""></p>
-            </div>
 
-            <img
-              className="h-9 w-9 rounded-full"
-              src={session?.user?.image || "https://links.papareact.com/gll"}
-            />
-          </div>
-        </div>
-      </div>
+      <Hdropdown />
     </div>
   );
 };
