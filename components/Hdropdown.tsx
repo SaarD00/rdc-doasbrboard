@@ -49,7 +49,7 @@ const ProfileDD = () => {
               Hi,
             </Typography>
             <Typography
-              variant="h7"
+              variant="h6"
               fontWeight="700"
               sx={{
                 ml: 1,
