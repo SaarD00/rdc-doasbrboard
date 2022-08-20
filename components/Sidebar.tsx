@@ -8,7 +8,7 @@ const Sidebar = () => {
   const { data: session } = useSession();
   const router = useRouter();
   return (
-    <div className=" min-h-screen col-span-1 bg-white  ">
+    <div className=" min-h-screen sticky z-50 top-0 col-span-1 bg-white  ">
       <main>
         {/* Header */}
         <div className="p-5 px-6 flex justify-between text-cyan-500 font-extrabold gap-5 items-center ">

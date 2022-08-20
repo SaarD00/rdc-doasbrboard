@@ -33,7 +33,7 @@ const products = [
     id: "3",
     name: "Atharva",
     post: "Project Manager",
-    pname: "Housekeeping",
+    pname: "Cool person",
     priority: "None",
     pbg: "success.main",
     budget: "12.8",
