@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Post } from "../typings";
+import Header from "./Header";
 import Postt from "./Post";
 
 interface Props {

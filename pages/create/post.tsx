@@ -2,6 +2,7 @@ import type { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import { Toaster } from "react-hot-toast";
+import Header from "../../components/Header";
 import Modal from "../../components/Modal";
 import Sidebar from "../../components/Sidebar";
 import { Post } from "../../typings";
@@ -22,7 +23,10 @@ const Home = ({ posts }: Props) => {
       <Toaster />
       <div className="grid grid-cols-6 bg-gray-100">
         <Sidebar />
-        <Modal posts={posts} />
+        <div className="col-span-5">
+          <Header />
+          <Modal posts={posts} />
+        </div>
       </div>
     </div>
   );
