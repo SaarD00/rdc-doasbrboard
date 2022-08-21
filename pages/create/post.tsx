@@ -20,7 +20,10 @@ const Home = ({ posts }: Props) => {
         <Toaster />
       </Head>
       <Toaster />
-      <Modal posts={posts} />
+      <div className="grid grid-cols-6 bg-gray-100">
+        <Sidebar />
+        <Modal posts={posts} />
+      </div>
     </div>
   );
 };

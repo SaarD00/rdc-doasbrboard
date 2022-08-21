@@ -9,7 +9,7 @@ interface Props {
 const Modal = ({ posts: postsProps }: Props) => {
   const [posts, setPosts] = useState<Post[]>(postsProps);
   return (
-    <div className=" ">
+    <div className="p-20 col-span-5   ">
       <Postt setPosts={setPosts} />
     </div>
   );

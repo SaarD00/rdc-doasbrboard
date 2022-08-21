@@ -5,6 +5,19 @@ import { Post, PostBody } from "../typings";
 import { useSession } from "next-auth/react";
 import toast from "react-hot-toast";
 import { MdOutlineCancel } from "react-icons/md";
+import {
+  Grid,
+  Stack,
+  TextField,
+  Checkbox,
+  FormGroup,
+  FormControlLabel,
+  RadioGroup,
+  Radio,
+  FormLabel,
+  FormControl,
+  Button,
+} from "@mui/material";
 
 interface Props {
   setPosts: Dispatch<SetStateAction<Post[]>>;
@@ -48,108 +61,51 @@ const Postt = ({ setPosts }: Props) => {
     setExcerpt("");
   };
   return (
-    <div className="bg-[#111828]  min-h-screen col-span-1  ">
-      <main>
-        {/* Header */}
-        <div className="p-5 px-6 flex justify-between text-cyan-200 gap-5 items-center ">
-          <div className="flex items-center gap-5">
-            <img src="https://react-material.fusetheme.com/assets/images/logo/logo.svg" />
-            <p>StudyLit</p>
-          </div>
-          <div>
-            <FiMenu className="text-white" />
-          </div>
+    <Grid className="bg-white rounded-lg p-5" container spacing={0}>
+      <Grid item xs={12} lg={12}>
+        <div className="p-2 space-y-10">
+          <p className="text-2xl">Upload Form</p>
+          <Stack spacing={3}>
+            <TextField
+              id="title"
+              label="Title"
+              variant="outlined"
+              placeholder="Something like: Introduction to basic vectors!"
+              onChange={(e) => {
+                setInput(e.target.value);
+              }}
+              value={input}
+            />
+            <TextField
+              placeholder="Something Like: https://react-material.fusetheme.com/assets/images/logo/logo.svg "
+              id="image"
+              label="Image"
+              variant="outlined"
+              onChange={(e) => {
+                setImage(e.target.value);
+              }}
+              value={image}
+            />
+
+            <TextField
+              id="outlined-multiline-static"
+              label="Exceprt"
+              multiline
+              onChange={(e) => {
+                setExcerpt(e.target.value);
+              }}
+              value={excerpt}
+              rows={4}
+              placeholder="Amongus"
+            />
+          </Stack>
+          <br />
+          <Button onClick={handleSubmit} variant="contained">
+            Submit
+          </Button>
         </div>
-        {/* Profile */}
-        <div className=" justify-center text-white my-10 flex-col flex items-center">
-          <img
-            className="h-32 w-32 object-cover rounded-full"
-            src={session?.user?.image || "https://links.papareact.com/gll"}
-          />
-          <div className="my-7">
-            <p className="font-semibold">{session?.user?.name}</p>
-            <p className="text-white/70 font-light">{session?.user?.email}</p>
-          </div>
-        </div>
-        {/* DashBoard */}
-        <div className="px-5 flex items-center justify-center flex-col gap-5">
-          <div className="hover:bg-[#1b263f] p-5 rounded-full transition-all duration-200 cursor-pointer active:scale-125">
-            <p
-              onClick={() => setShowModal(true)}
-              className="text-indigo-400 text-3xl font-semibold "
-            >
-              UPLOAD
-            </p>
-          </div>
-          {showModal ? (
-            <div className=" bg-[#2b3342] absolute flex flex-col mt-2   gap-5  p-2 w-96 py-5 rounded-lg text-white">
-              <div className="bg-indigo-900 justify-between items-center flex px-2 py-2 rounded-lg w-full">
-                <p>Upload Modal</p>
-                <MdOutlineCancel
-                  onClick={() => setShowModal(false)}
-                  className="cursor-pointer"
-                />
-              </div>
-              <div className="gap-y-2 flex flex-col">
-                <p className="font-semibold">Title</p>
-                <input
-                  type="text"
-                  onChange={(e) => {
-                    setInput(e.target.value);
-                  }}
-                  value={input}
-                  placeholder="Enter The Title"
-                  className="bg-[#111828] rounded-lg outline-none py-1 px-10 text-white"
-                />
-              </div>
-              <div className="gap-y-2 flex flex-col">
-                <p className="font-semibold">Image</p>
-                <input
-                  type="text"
-                  onChange={(e) => {
-                    setImage(e.target.value);
-                  }}
-                  value={image}
-                  placeholder="Enter The image url"
-                  className="bg-[#111828] rounded-lg outline-none py-1 px-10 text-white"
-                />
-              </div>
-              <div className="gap-y-2 flex flex-col">
-                <p className="font-semibold">Excerpt</p>
-                <textarea
-                  onChange={(e) => {
-                    setExcerpt(e.target.value);
-                  }}
-                  value={excerpt}
-                  placeholder="a small overview of the post"
-                  className="bg-[#111828]  rounded-lg outline-none py-1 px-10 text-white"
-                />
-              </div>
-              {/* <div className="gap-y-2 flex flex-col">
-                <p className="font-semibold">Subject</p>
-                <textarea
-                  onChange={(e) => {
-                    setExcerpt(e.target.value);
-                  }}
-                  value={excerpt}
-                  placeholder="write subject name in short form"
-                  className="bg-[#111828]  rounded-lg outline-none py-1 px-10 text-white"
-                />
-              </div> */}
-              <div className="flex justify-center bg-indigo-600 py-2 rounded-full">
-                <button
-                  type="submit"
-                  className="text-xl font-bold"
-                  onClick={handleSubmit}
-                >
-                  POST
-                </button>
-              </div>
-            </div>
-          ) : null}
-        </div>
-      </main>
-    </div>
+      </Grid>
+    </Grid>
   );
 };
 

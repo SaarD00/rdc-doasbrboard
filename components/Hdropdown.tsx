@@ -55,7 +55,7 @@ const ProfileDD = () => {
                 ml: 1,
               }}
             >
-              Julia
+              {session?.user?.name}
             </Typography>
             <FiChevronDown />
           </Box>
