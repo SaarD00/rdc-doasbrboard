@@ -27,10 +27,10 @@ const Postt = ({ setPosts }: Props) => {
   const [input, setInput] = useState<string>("");
   const [excerpt, setExcerpt] = useState<string>("");
   const [image, setImage] = useState<string>("");
+  const [link, setLink] = useState<string>("");
 
   const { data: session } = useSession();
 
-  const [showModal, setShowModal] = useState(false);
   const Post = async () => {
     const postInfo: PostBody = {
       text: input,
@@ -38,6 +38,7 @@ const Postt = ({ setPosts }: Props) => {
       profileImg: session?.user?.image || "https://links.papareact.com/gll",
       image: image,
       excerpt: excerpt,
+      link: link,
     };
 
     const result = await fetch(`/api/addPost`, {
@@ -59,6 +60,7 @@ const Postt = ({ setPosts }: Props) => {
     setInput("");
     setImage("");
     setExcerpt("");
+    setLink("");
   };
   return (
     <Grid className="bg-white rounded-lg p-5" container spacing={0}>
@@ -97,6 +99,16 @@ const Postt = ({ setPosts }: Props) => {
               value={excerpt}
               rows={4}
               placeholder="Amongus"
+            />
+            <TextField
+              id="Subject"
+              label="Subject Name"
+              variant="outlined"
+              placeholder="Like 'ai' also use short forms"
+              onChange={(e) => {
+                setLink(e.target.value);
+              }}
+              value={link}
             />
           </Stack>
           <br />

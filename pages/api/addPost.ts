@@ -22,6 +22,7 @@ export default async function handler(
           profileImg: data.profileImg,
           image: data.image,
           excerpt: data.excerpt,
+          link: data.link
         },
       },
     ],

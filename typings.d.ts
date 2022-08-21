@@ -5,7 +5,7 @@ export type PostBody = {
     username: string
     profileImg: string
     image?: string
-    link?: string
+    link: string
     excerpt?: string
   }
   
