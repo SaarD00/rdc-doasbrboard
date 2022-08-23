@@ -43,3 +43,10 @@ export interface Detail extends DetailBody {
   _type: 'detail'
 }
 
+
+export interface User {
+  name: string
+  email: string
+  profileImg: string
+  description?: string
+}

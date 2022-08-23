@@ -11,7 +11,7 @@ import { Toaster } from "react-hot-toast";
 const Home: NextPage = () => {
   const { data: session } = useSession();
   const router = useRouter();
-  // if (!session) return <Login />;s
+  if (!session) return <Login />;
   return (
     <div className="">
       <Head>

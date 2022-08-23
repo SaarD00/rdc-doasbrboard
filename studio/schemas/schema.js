@@ -8,6 +8,7 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 import post from "./post";
 import detail from "./detail";
 import category from "./category";
+import users from "./users";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -21,6 +22,7 @@ export default createSchema({
     post,
     detail,
     category,
+    users,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
   ]),
