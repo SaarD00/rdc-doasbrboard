@@ -5,14 +5,17 @@ import { Toaster } from "react-hot-toast";
 import Header from "../../components/Header";
 import Modal from "../../components/Modal";
 import Sidebar from "../../components/Sidebar";
-import { Post } from "../../typings";
+import { Detail, Post } from "../../typings";
+import { fetchDetails } from "../../utils/fetchDetails";
 import { fetchPosts } from "../../utils/fetchPosts";
+import Modal2 from "../../components/Modal2";
 
 interface Props {
   posts: Post[];
+  details: Detail[];
 }
 
-const Home = ({ posts }: Props) => {
+const Home = ({ posts, details }: Props) => {
   return (
     <div className="">
       <Head>
@@ -25,7 +28,7 @@ const Home = ({ posts }: Props) => {
         <Sidebar />
         <div className="col-span-5">
           <Header />
-          <Modal posts={posts} />
+          <Modal2 details={details} />
         </div>
       </div>
     </div>
@@ -35,10 +38,12 @@ const Home = ({ posts }: Props) => {
 export default Home;
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const posts = await fetchPosts();
+  const details = await fetchDetails();
 
   return {
     props: {
       posts,
+      details,
     },
   };
 };

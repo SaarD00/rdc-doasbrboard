@@ -1,7 +1,7 @@
 import React, { Dispatch, SetStateAction, useState } from "react";
 import { TbChecklist } from "react-icons/tb";
 import { FiMenu } from "react-icons/fi";
-import { Post, PostBody } from "../typings";
+import { Detail, DetailBody, Post, PostBody } from "../typings";
 import { useSession } from "next-auth/react";
 import toast from "react-hot-toast";
 import { MdOutlineCancel } from "react-icons/md";
@@ -21,29 +21,31 @@ import {
 import { useRouter } from "next/router";
 
 interface Props {
-  setPosts: Dispatch<SetStateAction<Post[]>>;
+  setPosts: Dispatch<SetStateAction<Detail[]>>;
 }
 
-const Postt = ({ setPosts }: Props) => {
+const Postt2 = ({ setPosts }: Props) => {
   const [input, setInput] = useState<string>("");
   const [excerpt, setExcerpt] = useState<string>("");
   const [image, setImage] = useState<string>("");
   const [link, setLink] = useState<string>("");
+  const [title, setTitle] = useState<string>("");
   const router = useRouter();
 
   const { data: session } = useSession();
 
   const Post = async () => {
-    const postInfo: PostBody = {
-      text: input,
+    const postInfo: DetailBody = {
+      firstext: input,
       username: session?.user?.name || "Unknown",
       profileImg: session?.user?.image || "https://links.papareact.com/gll",
       image: image,
-      excerpt: excerpt,
-      link: link,
+      secondtext: excerpt,
+      categories: link,
+      title: title,
     };
 
-    const result = await fetch(`/api/addPost`, {
+    const result = await fetch(`/api/addDetail`, {
       body: JSON.stringify(postInfo),
       method: "POST",
     });
@@ -77,9 +79,31 @@ const Postt = ({ setPosts }: Props) => {
               variant="outlined"
               placeholder="Something like: Introduction to basic vectors!"
               onChange={(e) => {
+                setTitle(e.target.value);
+              }}
+              value={title}
+            />
+            <TextField
+              id="title"
+              label="Opening Para"
+              variant="outlined"
+              placeholder="Something like: Introduction to basic vectors!"
+              onChange={(e) => {
                 setInput(e.target.value);
               }}
               value={input}
+            />
+
+            <TextField
+              id="outlined-multiline-static"
+              label="Second Para"
+              multiline
+              onChange={(e) => {
+                setExcerpt(e.target.value);
+              }}
+              value={excerpt}
+              rows={4}
+              placeholder="snƃoɯɐdıʞ"
             />
             <TextField
               placeholder="Something Like: https://react-material.fusetheme.com/assets/images/logo/logo.svg "
@@ -90,18 +114,6 @@ const Postt = ({ setPosts }: Props) => {
                 setImage(e.target.value);
               }}
               value={image}
-            />
-
-            <TextField
-              id="outlined-multiline-static"
-              label="Exceprt"
-              multiline
-              onChange={(e) => {
-                setExcerpt(e.target.value);
-              }}
-              value={excerpt}
-              rows={4}
-              placeholder="Amongus"
             />
             <TextField
               id="Subject"
@@ -119,7 +131,12 @@ const Postt = ({ setPosts }: Props) => {
             <Button onClick={handleSubmit} variant="contained">
               Submit
             </Button>
-            <Button onClick={() => router.push("/create/detail")} variant="contained">Detail Page</Button>
+            <Button
+              onClick={() => router.push("/create/detail")}
+              variant="contained"
+            >
+              Detail Page
+            </Button>
           </div>
         </div>
       </Grid>
@@ -127,4 +144,4 @@ const Postt = ({ setPosts }: Props) => {
   );
 };
 
-export default Postt;
+export default Postt2;

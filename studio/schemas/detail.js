@@ -4,6 +4,11 @@ export default {
   type: "document",
   fields: [
     {
+      name: "title",
+      title: "Title of text",
+      type: "string",
+    },
+    {
       name: "firstext",
       title: "First Set of text. It can be a introduction or a summary",
       type: "string",
