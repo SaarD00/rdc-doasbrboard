@@ -30,9 +30,16 @@ const Postt2 = ({ setPosts }: Props) => {
   const [image, setImage] = useState<string>("");
   const [link, setLink] = useState<string>("");
   const [title, setTitle] = useState<string>("");
+  const [input2, setInput2] = useState<string>("");
+  const [input3, setInput3] = useState<string>("");
+  const [show, setShow] = useState(false);
   const router = useRouter();
 
   const { data: session } = useSession();
+
+  const handlepara = () => {
+    setShow(true);
+  };
 
   const Post = async () => {
     const postInfo: DetailBody = {
@@ -43,6 +50,8 @@ const Postt2 = ({ setPosts }: Props) => {
       secondtext: excerpt,
       categories: link,
       title: title,
+      thirdtext: input2,
+      fourthtext: input3,
     };
 
     const result = await fetch(`/api/addDetail`, {
@@ -65,6 +74,9 @@ const Postt2 = ({ setPosts }: Props) => {
     setImage("");
     setExcerpt("");
     setLink("");
+    setInput2("");
+    setInput3("");
+    setTitle("");
     router.push("/create/detail");
   };
   return (
@@ -105,6 +117,33 @@ const Postt2 = ({ setPosts }: Props) => {
               rows={4}
               placeholder="snƃoɯɐdıʞ"
             />
+            {show && (
+              <>
+                <TextField
+                  id="outlined-multiline-static"
+                  label="Third para"
+                  multiline
+                  onChange={(e) => {
+                    setInput2(e.target.value);
+                  }}
+                  value={input2}
+                  rows={4}
+                  placeholder="snƃoɯɐdıʞ"
+                />
+                <TextField
+                  id="outlined-multiline-static"
+                  label="Fourth Para"
+                  multiline
+                  onChange={(e) => {
+                    setInput3(e.target.value);
+                  }}
+                  value={input3}
+                  rows={4}
+                  placeholder="snƃoɯɐdıʞ"
+                />
+              </>
+            )}
+
             <TextField
               placeholder="Something Like: https://react-material.fusetheme.com/assets/images/logo/logo.svg "
               id="image"
@@ -131,11 +170,8 @@ const Postt2 = ({ setPosts }: Props) => {
             <Button onClick={handleSubmit} variant="contained">
               Submit
             </Button>
-            <Button
-              onClick={() => router.push("/create/detail")}
-              variant="contained"
-            >
-              Detail Page
+            <Button onClick={handlepara} variant="contained">
+              Add Paragraph
             </Button>
           </div>
         </div>

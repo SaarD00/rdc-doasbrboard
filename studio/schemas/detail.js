@@ -19,6 +19,16 @@ export default {
       type: "string",
     },
     {
+      name: "thirdtext",
+      title: "Second Set of text. It can be a introduction or a summary",
+      type: "string",
+    },
+    {
+      name: "fourthtext",
+      title: "Second Set of text. It can be a introduction or a summary",
+      type: "string",
+    },
+    {
       name: "username",
       title: "Username",
       type: "string",
@@ -31,8 +41,7 @@ export default {
     {
       name: "categories",
       title: "Categories",
-      type: "array",
-      of: [{ type: "reference", to: { type: "category" } }],
+      type: "string",
     },
     {
       name: "image",

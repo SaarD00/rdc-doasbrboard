@@ -29,6 +29,8 @@ export type DetailBody = {
   image?: string
   firstext?: string
   secondtext?: string
+  thirdtext?: string
+  fourthtext?: string
   categories?: string
   title: string
 }

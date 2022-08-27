@@ -24,6 +24,8 @@ export default async function handler(
           image: data.image,
           profileImg: data.profileImg,
           categories: data.categories,
+          thirdtext: data.thirdtext,
+          fourthtext: data.fourthtext
         },
       },
     ],
