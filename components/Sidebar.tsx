@@ -29,7 +29,7 @@ const Sidebar = () => {
         <div className="p-5 px-6 flex justify-between text-sky-600 font-extrabold gap-5 items-center ">
           <div className="flex items-center gap-5">
             <img
-              onClick={() => router.push("/")}
+              onClick={() => signOut()}
               src="https://cdn.sanity.io/images/mrfd4see/production/a8d87dfb8246687bb8129c03cc6b16c99e007b73-1803x405.png"
             />
           </div>

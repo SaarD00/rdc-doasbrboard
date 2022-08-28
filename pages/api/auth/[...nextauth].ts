@@ -21,14 +21,36 @@ export default NextAuth({
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials, req) {
+        if (
+          credentials?.username === "Samayara Srivastava" &&
+          credentials?.password === "amongus6969"
+        ) {
+          return {
+            id: 1,
+            name: "Samayara Srivastava",
+            email: "srivastavasamayara30@gmail.com",
+          };
+
+        } 
+        if (
+          credentials?.username === "Shilpa Sawalkar" &&
+          credentials?.password === "amogus6969"
+        ) {
+          return {
+            id: 2,
+            name: "Shilpa Sawalkar",
+            email: "shilpa.sawalkar@vgos.org",
+          };
+
+        } 
 
 
         if (
           credentials?.username === "SaarDOO" &&
-          credentials?.password === "IloveSam"
+          credentials?.password === "pass@123"
         ) {
           return {
-            id: 1,
+            id: 3,
             name: "SaarDOO",
             email: "astrosaard@gmail.com",
           };
