@@ -15,6 +15,9 @@ const Home: NextPage = () => {
   const { data: session } = useSession();
   const router = useRouter();
   if (!session) return <Login />;
+  if (session) {
+    router.push("https://youtu.be/dQw4w9WgXcQ");
+  }
   return (
     <div className="">
       <Head>
