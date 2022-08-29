@@ -5,9 +5,9 @@ const Profile = () => {
   const { data: session } = useSession();
   return (
     // cONTAINR
-    <div className="flex flex-col justify-center   p-1  scale-90  shadow-lg rounded-2xl ">
+    <div className="flex flex-col justify-center   p-1  scale-90  shadow-sm rounded-2xl ">
       <p className="text-3xl font-bold mb-5">User Profile</p>
-      <div className="flex flex-col justify-center items-center">
+      <div className="flex flex-col bg-white rounded-fu justify-center items-center">
         {/* Top */}
         <div>
           <img
