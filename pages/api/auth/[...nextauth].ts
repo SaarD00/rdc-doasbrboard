@@ -28,7 +28,7 @@ export default NextAuth({
         ) {
           return {
             id: 1,
-            name: "Dont redirect to /profile",
+            name: "Dont click me",
             email: "srivastavasamayara30@gmail.com",
             image: "https://teams.microsoft.com/api/mt/apac/beta/users/8:orgid:63669451-7df9-4554-857d-22811e51df50/profilepicturev2?displayname=Samaira%20Srivastav&size=HR64x64",
             description: ""

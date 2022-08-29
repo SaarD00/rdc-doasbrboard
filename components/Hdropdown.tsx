@@ -13,9 +13,11 @@ import {
 } from "@mui/material";
 import { FiChevronDown } from "react-icons/fi";
 import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 const ProfileDD = () => {
   const [anchorEl4, setAnchorEl4] = React.useState(null);
   const { data: session } = useSession();
+  const router = useRouter();
   return (
     <>
       <Button
@@ -23,6 +25,7 @@ const ProfileDD = () => {
         color="inherit"
         aria-controls="profile-menu"
         aria-haspopup="true"
+        onClick={() => router.push("/profile")}
       >
         <Box display="flex" alignItems="center">
           <Image
