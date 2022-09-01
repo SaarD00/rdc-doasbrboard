@@ -29,7 +29,7 @@ const Stats = () => {
     ["Dec", 12, 15],
   ];
   return (
-    <div className="bg-white  p-10 rounded-3xl shadow-lg">
+    <div className="bg-white    p-10 rounded-3xl shadow-lg">
       {/* <Chart
         options={optionssalesoverview}
         series={seriessalesoverview}

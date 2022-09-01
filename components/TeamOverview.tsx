@@ -16,33 +16,33 @@ const products = [
     name: "Lord SaarDOO",
     post: "Senior SWE",
     pname: "Elite Admin",
-    priority: "High",
+    priority: "Extreme",
     pbg: "error.main",
-    budget: "69.69",
+    budget: "699.69",
   },
   {
     id: "2",
     name: "Samayara",
     post: "Project Manager",
-    pname: "Desgin lead",
+    pname: "Extreme",
     priority: "High",
     pbg: "error.main",
-    budget: "24.5",
+    budget: "699.69",
   },
   {
     id: "3",
     name: "Atharva",
-    post: "Project Manager",
-    pname: "Cool person",
+    post: "Janitor",
+    pname: "House keeping",
     priority: "None",
     pbg: "success.main",
-    budget: "12.8",
+    budget: "0",
   },
 ];
 
 const TeamOverview = () => {
   return (
-    <div className="bg-white rounded-3xl  px-20 py-10 w-full shadow-lg scale-90 mt-10 ">
+    <div className="bg-white rounded-3xl   px-20 py-10 w-full shadow-lg scale-90 mt-10 ">
       <p>Team</p>
       <Table
         aria-label="simple table"
