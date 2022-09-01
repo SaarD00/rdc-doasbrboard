@@ -6,7 +6,9 @@ module.exports = {
       "lh3.googleusercontent.com",
       "teams.microsoft.com",
       "scontent.cdninstagram.com",
-      "scontent-bom1-1.cdninstagram.com"
+      "scontent-bom1-1.cdninstagram.com",
+      "links.papareact.com",
+      "media.graphassets.com",
     ],
   },
 };

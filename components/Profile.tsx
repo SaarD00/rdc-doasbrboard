@@ -17,9 +17,12 @@ const Profile = () => {
           />
         </div>
         <div className="absolute mt-64 flex justify-center items-center   border-4  rounded-full">
-          <img
+          <Image
             src={session?.user?.image || ""}
-            className="rounded-full h-32 w-32 object-cover"
+            width="100"
+            height="100"
+            objectFit="cover"
+            className="rounded-full"
           />
         </div>
         <div className="bg-gray-200 - justify-center w-full rounded-lg mt-10 p-5 items-center flex flex-col ">

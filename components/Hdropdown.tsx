@@ -30,9 +30,10 @@ const ProfileDD = () => {
         <Box display="flex" alignItems="center">
           <Image
             src={session?.user?.image || ""}
-            width="30"
-            height="30"
-            className="rounded-full"
+            width="40"
+            height="40"
+            objectFit="cover"
+            className="rounded-full border-2 border-black"
           />
           <Box
             sx={{
