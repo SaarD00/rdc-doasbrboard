@@ -8,6 +8,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
+    "@mui/icons-material": "^5.10.3",
     "@mui/lab": "^5.0.0-alpha.95",
     "@mui/material": "^5.10.1",
     "@syncfusion/ej2-react-popups": "^20.2.43",

@@ -5,6 +5,7 @@ import { Toaster } from "react-hot-toast";
 import Header from "../../components/Header";
 import Modal from "../../components/Modal";
 import Sidebar from "../../components/Sidebar";
+import Sidebar2 from "../../components/Sidebar2";
 import { Post } from "../../typings";
 import { fetchPosts } from "../../utils/fetchPosts";
 
@@ -21,10 +22,11 @@ const Home = ({ posts }: Props) => {
         <Toaster />
       </Head>
       <Toaster />
-      <div className="grid grid-cols-6 bg-gray-100">
+      <div className="grid grid-cols-6  bg-gray-100">
         <Sidebar />
         <div className="col-span-5">
           <Header />
+          <Sidebar2 />
           <Modal posts={posts} />
         </div>
       </div>

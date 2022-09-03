@@ -39,7 +39,7 @@ const ProfileDD = () => {
             sx={{
               display: {
                 xs: "none",
-                sm: "flex",
+                lg: "flex",
               },
               alignItems: "center",
             }}

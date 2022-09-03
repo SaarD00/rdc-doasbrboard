@@ -42,7 +42,7 @@ const products = [
 
 const TeamOverview = () => {
   return (
-    <div className="bg-white rounded-3xl   px-20 py-10 w-full shadow-lg scale-90 mt-10 ">
+    <div className="bg-white rounded-3xl  lg:px-20 lg:py-10  md:px-10 md:py-5 p-5 w-full shadow-lg scale-90   mt-2 lg:mt-10 ">
       <p>Team</p>
       <Table
         aria-label="simple table"
@@ -68,12 +68,16 @@ const TeamOverview = () => {
                 Name
               </Typography>
             </TableCell>
-            <TableCell>
-              <Typography color="textSecondary" variant="h6">
-                Priority
-              </Typography>
-            </TableCell>
-            <TableCell align="right">
+
+            <TableCell
+              sx={{
+                display: {
+                  xs: "none",
+                  lg: "flex",
+                },
+              }}
+              align="right"
+            >
               <Typography color="textSecondary" variant="h6">
                 Budget
               </Typography>
@@ -125,21 +129,31 @@ const TeamOverview = () => {
                   {product.pname}
                 </Typography>
               </TableCell>
-              <TableCell>
-                <Chip
-                  sx={{
-                    pl: "4px",
-                    pr: "4px",
-                    backgroundColor: product.pbg,
-                    color: "#fff",
-                  }}
-                  size="small"
-                  label={product.priority}
-                ></Chip>
-              </TableCell>
-              <TableCell align="right">
-                <Typography variant="h6">${product.budget}k</Typography>
-              </TableCell>
+              <Box
+                sx={{
+                  display: {
+                    xs: "none",
+                    lg: "inline-flex",
+                  },
+                  mt: 3,
+                }}
+              >
+                <TableCell>
+                  <Chip
+                    sx={{
+                      pl: "4px",
+                      pr: "4px",
+                      backgroundColor: product.pbg,
+                      color: "#fff",
+                    }}
+                    size="small"
+                    label={product.priority}
+                  ></Chip>
+                </TableCell>
+                <TableCell align="right">
+                  <Typography variant="h6">${product.budget}k</Typography>
+                </TableCell>
+              </Box>
             </TableRow>
           ))}
         </TableBody>
