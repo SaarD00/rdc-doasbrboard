@@ -13,9 +13,9 @@ import {
 const products = [
   {
     id: "1",
-    name: "Lord SaarDOO",
-    post: "Senior SWE",
-    pname: "Elite Admin",
+    name: "Saarthak",
+    post: "Elven Prince",
+    pname: "Cheif Executive",
     priority: "Extreme",
     pbg: "error.main",
     budget: "699.69",
@@ -23,8 +23,8 @@ const products = [
   {
     id: "2",
     name: "Samayara",
-    post: "Project Manager",
-    pname: "Elite Admin",
+    post: "Elven Princess",
+    pname: "Cheif Executive",
     priority: "Extreme",
     pbg: "error.main",
     budget: "699.69",
@@ -33,7 +33,7 @@ const products = [
     id: "3",
     name: "Atharva",
     post: "Janitor",
-    pname: "House keeping",
+    pname: "House Keeping",
     priority: "None",
     pbg: "success.main",
     budget: "0",
