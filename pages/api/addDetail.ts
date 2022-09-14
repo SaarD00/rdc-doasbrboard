@@ -23,6 +23,7 @@ export default async function handler(
           secondtext: data.secondtext,
           image: data.image,
           profileImg: data.profileImg,
+          breaker: data.breaker,
           categories: data.categories,
           thirdtext: data.thirdtext,
           fourthtext: data.fourthtext
