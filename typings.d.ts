@@ -27,6 +27,7 @@ export type DetailBody = {
   username: string
   profileImg: string
   image?: string
+  breaker?: string
   firstext?: string
   secondtext?: string
   thirdtext?: string

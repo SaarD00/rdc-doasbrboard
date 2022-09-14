@@ -29,6 +29,7 @@ const Postt2 = ({ setPosts }: Props) => {
   const [excerpt, setExcerpt] = useState<string>("");
   const [image, setImage] = useState<string>("");
   const [link, setLink] = useState<string>("");
+  const [breaker, setBreaker] = useState<string>("");
   const [title, setTitle] = useState<string>("");
   const [input2, setInput2] = useState<string>("");
   const [input3, setInput3] = useState<string>("");
@@ -52,6 +53,7 @@ const Postt2 = ({ setPosts }: Props) => {
       title: title,
       thirdtext: input2,
       fourthtext: input3,
+      breaker: breaker,
     };
 
     const result = await fetch(`/api/addDetail`, {
@@ -76,6 +78,7 @@ const Postt2 = ({ setPosts }: Props) => {
     setLink("");
     setInput2("");
     setInput3("");
+    setBreaker("");
     setTitle("");
     router.push("/create/detail");
   };
@@ -119,6 +122,17 @@ const Postt2 = ({ setPosts }: Props) => {
             />
             {show && (
               <>
+                <TextField
+                  id="outlined-multiline-static"
+                  label="Para Breaker"
+                  multiline
+                  onChange={(e) => {
+                    setBreaker(e.target.value);
+                  }}
+                  value={breaker}
+                  rows={4}
+                  placeholder="Para breaker || keep it empty if not needed"
+                />
                 <TextField
                   id="outlined-multiline-static"
                   label="Third para"

@@ -19,6 +19,11 @@ export default {
       type: "string",
     },
     {
+      name: "breaker",
+      title: "Second Set of text. It can be a introduction or a summary",
+      type: "string",
+    },
+    {
       name: "thirdtext",
       title: "Second Set of text. It can be a introduction or a summary",
       type: "string",
