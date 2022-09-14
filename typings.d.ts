@@ -32,6 +32,9 @@ export type DetailBody = {
   secondtext?: string
   thirdtext?: string
   fourthtext?: string
+  breaker2?: string
+  fifthtext?: string
+  sixthtext?: string
   categories?: string
   title: string
 }

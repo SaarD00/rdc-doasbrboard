@@ -30,9 +30,13 @@ const Postt2 = ({ setPosts }: Props) => {
   const [image, setImage] = useState<string>("");
   const [link, setLink] = useState<string>("");
   const [breaker, setBreaker] = useState<string>("");
+  const [breaker3, setBreaker3] = useState<string>("");
+  const [breaker2, setBreaker2] = useState(false);
   const [title, setTitle] = useState<string>("");
   const [input2, setInput2] = useState<string>("");
   const [input3, setInput3] = useState<string>("");
+  const [input4, setInput4] = useState<string>("");
+  const [input5, setInput5] = useState<string>("");
   const [show, setShow] = useState(false);
   const router = useRouter();
 
@@ -53,7 +57,10 @@ const Postt2 = ({ setPosts }: Props) => {
       title: title,
       thirdtext: input2,
       fourthtext: input3,
+      fifthtext: input4,
+      sixthtext: input5,
       breaker: breaker,
+      breaker2: breaker3,
     };
 
     const result = await fetch(`/api/addDetail`, {
@@ -123,15 +130,14 @@ const Postt2 = ({ setPosts }: Props) => {
             {show && (
               <>
                 <TextField
-                  id="outlined-multiline-static"
+                  id="title"
                   label="Para Breaker"
-                  multiline
+                  variant="outlined"
+                  placeholder="Use it to seperate weird stuff ( optional )"
                   onChange={(e) => {
                     setBreaker(e.target.value);
                   }}
                   value={breaker}
-                  rows={4}
-                  placeholder="Para breaker || keep it empty if not needed"
                 />
                 <TextField
                   id="outlined-multiline-static"
@@ -146,7 +152,7 @@ const Postt2 = ({ setPosts }: Props) => {
                 />
                 <TextField
                   id="outlined-multiline-static"
-                  label="Fourth Para"
+                  label="Fourth Para ( optional )"
                   multiline
                   onChange={(e) => {
                     setInput3(e.target.value);
@@ -155,8 +161,57 @@ const Postt2 = ({ setPosts }: Props) => {
                   rows={4}
                   placeholder="snƃoɯɐdıʞ"
                 />
+                <TextField
+                  id="outlined-multiline-static"
+                  label="fitfh Para ( optional )"
+                  multiline
+                  onChange={(e) => {
+                    setInput4(e.target.value);
+                  }}
+                  value={input4}
+                  rows={4}
+                  placeholder="snƃoɯɐdıʞ"
+                />
               </>
             )}
+
+            {show ? null : (
+              <Button onClick={handlepara} variant="contained">
+                Add Paragraph
+              </Button>
+            )}
+            {breaker2 ? null : (
+              <Button onClick={() => setBreaker2(true)} variant="contained">
+                Add Breaker
+              </Button>
+            )}
+
+            {breaker2 ? (
+              <>
+                <TextField
+                  id="title"
+                  label="Para Breaker"
+                  variant="outlined"
+                  placeholder="Use it to seperate weird stuff ( optional )"
+                  onChange={(e) => {
+                    setBreaker3(e.target.value);
+                  }}
+                  value={breaker3}
+                />
+
+                <TextField
+                  id="outlined-multiline-static"
+                  label="sixth Para ( optional )"
+                  multiline
+                  onChange={(e) => {
+                    setInput5(e.target.value);
+                  }}
+                  value={input5}
+                  rows={4}
+                  placeholder="snƃoɯɐdıʞ"
+                />
+              </>
+            ) : null}
 
             <TextField
               placeholder="Something Like: https://react-material.fusetheme.com/assets/images/logo/logo.svg "

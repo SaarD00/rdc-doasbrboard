@@ -26,7 +26,10 @@ export default async function handler(
           breaker: data.breaker,
           categories: data.categories,
           thirdtext: data.thirdtext,
-          fourthtext: data.fourthtext
+          fourthtext: data.fourthtext,
+          fifthtext: data.fifthtext,
+          sixthtext: data.sixthtext,
+          breaker2: data.breaker2
         },
       },
     ],

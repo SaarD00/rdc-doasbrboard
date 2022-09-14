@@ -24,12 +24,27 @@ export default {
       type: "string",
     },
     {
+      name: "breaker2",
+      title: "Second Set of text. It can be a introduction or a summary",
+      type: "string",
+    },
+    {
       name: "thirdtext",
       title: "Second Set of text. It can be a introduction or a summary",
       type: "string",
     },
     {
       name: "fourthtext",
+      title: "Second Set of text. It can be a introduction or a summary",
+      type: "string",
+    },
+    {
+      name: "fifthtext",
+      title: "Second Set of text. It can be a introduction or a summary",
+      type: "string",
+    },
+    {
+      name: "sixthtext",
       title: "Second Set of text. It can be a introduction or a summary",
       type: "string",
     },
