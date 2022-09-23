@@ -17,6 +17,7 @@
     "next": "latest",
     "next-auth": "^4.10.3",
     "next-sanity": "^0.6.2",
+    "nprogress": "^0.2.0",
     "react": "18.1.0",
     "react-apexcharts": "^1.4.0",
     "react-charts": "^2.0.0-beta.7",
@@ -28,6 +29,7 @@
   "devDependencies": {
     "@types/feather-icons": "^4.7.0",
     "@types/node": "^18.7.5",
+    "@types/nprogress": "^0.2.0",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "autoprefixer": "^10.4.7",
