@@ -14,36 +14,36 @@ const products = [
   {
     id: "1",
     name: "Saarthak",
-    post: "Elven Prince",
-    pname: "Cheif Executive",
+    post: "Software Lead",
+    pname: "CEO",
     priority: "Extreme",
     pbg: "error.main",
-    budget: "699.69",
+    budget: "6.9",
   },
   {
     id: "2",
     name: "Samayara",
-    post: "Elven Princess",
-    pname: "Cheif Executive",
+    post: "Hardware Lead",
+    pname: "CEO",
     priority: "Extreme",
     pbg: "error.main",
-    budget: "699.69",
+    budget: "6.9",
   },
   {
     id: "3",
     name: "Atharva",
-    post: "Janitor",
-    pname: "House Keeping",
-    priority: "None",
+    post: "Coustumer Care",
+    pname: "Labourer",
+    priority: "minimal",
     pbg: "success.main",
-    budget: "0",
+    budget: "0.2",
   },
 ];
 
 const TeamOverview = () => {
   return (
-    <div className="bg-white rounded-3xl  lg:px-20 lg:py-10  md:px-10 md:py-5 p-5 w-full shadow-lg scale-90   mt-2 lg:mt-10 ">
-      <p>Team</p>
+    <div className="bg-white rounded-3xl relative flex justify-center lg:py-10  md:px-10 md:py-5 p-5 w-full shadow-lg scale-90   mt-2 lg:mt-10 ">
+      <p className="text-2xl absolute">Team</p>
       <Table
         aria-label="simple table"
         sx={{
@@ -68,20 +68,33 @@ const TeamOverview = () => {
                 Name
               </Typography>
             </TableCell>
+            <div className="flex">
+              <TableCell
+                sx={{
+                  display: {
+                    xs: "none",
+                    lg: "flex",
+                  },
+                }}
+              >
+                <Typography color="textSecondary" variant="h6">
+                  Priority
+                </Typography>
+              </TableCell>
 
-            <TableCell
-              sx={{
-                display: {
-                  xs: "none",
-                  lg: "flex",
-                },
-              }}
-              align="right"
-            >
-              <Typography color="textSecondary" variant="h6">
-                Budget
-              </Typography>
-            </TableCell>
+              <TableCell
+                sx={{
+                  display: {
+                    xs: "none",
+                    lg: "flex",
+                  },
+                }}
+              >
+                <Typography color="textSecondary" variant="h6">
+                  Budget
+                </Typography>
+              </TableCell>
+            </div>
           </TableRow>
         </TableHead>
         <TableBody>

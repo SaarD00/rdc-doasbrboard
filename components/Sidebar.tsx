@@ -3,11 +3,17 @@ import { TbChecklist } from "react-icons/tb";
 import { FiMenu } from "react-icons/fi";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
-import { AiOutlineTeam } from "react-icons/ai";
+import { AiOutlineTeam, AiOutlineCloudUpload } from "react-icons/ai";
 const Sidebar = () => {
   const { data: session } = useSession();
   const [select2, setSelect2] = useState(false);
+  const [select3, setSelect3] = useState(false);
   const router = useRouter();
+
+  const selecttre = () => {
+    setSelect3(true);
+    router.push("/create/post");
+  };
 
   const selecttwo = async () => {
     router.push("/teams");
@@ -39,14 +45,39 @@ const Sidebar = () => {
         <div className="px-5 flex flex-col gap-5">
           <div>
             <p className="text-gray-600  m-3 mt-4 uppercase ">dashboard</p>
-            <div onClick={select} className={select2 ? normal : active}>
+            <div
+              onClick={select}
+              className={
+                router.pathname == "/teams" ||
+                router.pathname == "/create/post" ||
+                router.pathname == "/create/detail" ||
+                router.pathname == "/profile"
+                  ? normal
+                  : active
+              }
+            >
               <TbChecklist className="h-5 w-5 hidden flex-shrink-0 lg:inline-flex" />
               <p className=" lg:text-base md:text-sm ">Dashboard</p>
             </div>
             <p className="text-gray-600  m-3 mt-4 uppercase ">Pages</p>
-            <div onClick={selecttwo} className={select2 ? active : normal}>
+            <div
+              onClick={selecttwo}
+              className={router.pathname == "/teams" ? active : normal}
+            >
               <AiOutlineTeam className="h-5 w-5 hidden lg:inline-flex flex-shrink-0" />
               <p className="lg:text-base md:text-sm">Team</p>
+            </div>
+            <div
+              onClick={selecttre}
+              className={
+                router.pathname == "/create/post" ||
+                router.pathname == "/create/detail"
+                  ? active
+                  : normal
+              }
+            >
+              <AiOutlineCloudUpload className="h-5 w-5 hidden lg:inline-flex flex-shrink-0" />
+              <p className="lg:text-base md:text-sm">Upload</p>
             </div>
           </div>
         </div>

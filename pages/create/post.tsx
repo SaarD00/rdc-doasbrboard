@@ -23,10 +23,12 @@ const Home = ({ posts }: Props) => {
       </Head>
       <Toaster />
       <div className="grid grid-cols-6  bg-gray-100">
-        <Sidebar />
-        <div className="col-span-5">
+        <div className="hidden md:inline">
+          <Sidebar />
+        </div>
+        <div className="col-span-6 md:col-span-5">
           <Header />
-          <Sidebar2 />
+
           <Modal posts={posts} />
         </div>
       </div>

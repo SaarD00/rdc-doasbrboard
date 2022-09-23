@@ -10,7 +10,7 @@ const Header = () => {
   const { data: session } = useSession();
   const router = useRouter();
   return (
-    <div className="px-7 pt-3 flex justify-between z-50  bg-gray-100 sticky top-0">
+    <div className="px-7 pt-3 flex justify-between z-20 bg-gray-100/50 sticky top-0">
       <div className="flex gap-5">
         <div className="group cursor-pointer ">
           <BsUpload

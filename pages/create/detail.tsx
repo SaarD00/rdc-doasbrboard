@@ -25,7 +25,9 @@ const Home = ({ posts, details }: Props) => {
       </Head>
       <Toaster />
       <div className="grid grid-cols-6 bg-gray-100">
-        <Sidebar />
+        <div className="hidden md:inline">
+          <Sidebar />
+        </div>
         <div className="col-span-5">
           <Header />
           <Modal2 details={details} />
