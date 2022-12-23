@@ -32,12 +32,11 @@ const Sidebar = () => {
     <div className=" min-h-screen sticky z-50 top-0 col-span-1 bg-white  ">
       <main>
         {/* Header */}
-        <div className="p-5 px-6 flex justify-between text-sky-600 font-extrabold gap-5 items-center ">
+        <div className="p-5 px-6 flex justify-between text-sky-700  font-extrabold gap-5 items-center ">
           <div className="flex items-center gap-5">
-            <img
-              onClick={() => signOut()}
-              src="https://cdn.sanity.io/images/mrfd4see/production/a8d87dfb8246687bb8129c03cc6b16c99e007b73-1803x405.png"
-            />
+            <p className="py-5  text-3xl " onClick={() => signOut()}>
+              RDC{" "}
+            </p>
           </div>
         </div>
 
@@ -65,9 +64,9 @@ const Sidebar = () => {
               className={router.pathname == "/teams" ? active : normal}
             >
               <AiOutlineTeam className="h-5 w-5 hidden lg:inline-flex flex-shrink-0" />
-              <p className="lg:text-base md:text-sm">Team</p>
+              <p className="lg:text-base md:text-sm">Appointments</p>
             </div>
-            <div
+            {/* <div
               onClick={selecttre}
               className={
                 router.pathname == "/create/post" ||
@@ -77,8 +76,8 @@ const Sidebar = () => {
               }
             >
               <AiOutlineCloudUpload className="h-5 w-5 hidden lg:inline-flex flex-shrink-0" />
-              <p className="lg:text-base md:text-sm">Upload</p>
-            </div>
+              <p className="lg:text-base md:text-sm">Appointments</p>
+            </div> */}
           </div>
         </div>
       </main>

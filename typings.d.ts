@@ -1,59 +1,25 @@
 
 
-export type PostBody = {
-    text: string
-    username: string
-    profileImg: string
-    image?: string
-    link: string
-    excerpt?: string
+export type AppointmentBody = {
+  paitent_name: string
+  email: string
+  phone: string
+  address?: string
+  speciality: string
+  date?: string
   }
   
   
   
   
-  export interface Post extends PostBody {
+  export interface Appointment extends AppointmentBody {
     _id: string
     _createdAt: string
     _updatedAt: string
     _rev: string
-    _type: 'post'
+    _type: 'appointment'
   }
   
 
   
 
-export type DetailBody = {
-  username: string
-  profileImg: string
-  image?: string
-  breaker?: string
-  firstext?: string
-  secondtext?: string
-  thirdtext?: string
-  fourthtext?: string
-  breaker2?: string
-  fifthtext?: string
-  sixthtext?: string
-  categories?: string
-  title: string
-}
-
-
-
-
-export interface Detail extends DetailBody {
-  _id: string
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  _type: 'detail'
-}
-
-
-export interface User {
-  name: string
-  email: string
-  profileImg: string
-  description?: string
-}

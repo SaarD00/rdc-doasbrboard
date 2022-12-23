@@ -15,7 +15,7 @@ const Stats = () => {
     },
   };
   const seriessalesoverview = [
-    ["Month", "AI", "Math"],
+    ["Month", "Appointments", "Completed"],
     ["Jan*", 8, 16],
     ["Feb", 5, 9],
     ["March", 4, 3],

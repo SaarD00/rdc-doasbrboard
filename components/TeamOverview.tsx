@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Typography,
   Box,
@@ -9,41 +9,49 @@ import {
   TableRow,
   Chip,
 } from "@mui/material";
+import { Appointment } from "../typings";
+import TimeAgo from "react-timeago";
 
 const products = [
   {
     id: "1",
-    name: "Saarthak",
-    post: "Software Lead",
-    pname: "CEO",
-    priority: "Extreme",
-    pbg: "error.main",
-    budget: "6.9",
-  },
-  {
-    id: "2",
     name: "Samayara",
     post: "Hardware Lead",
     pname: "CEO",
     priority: "Extreme",
     pbg: "error.main",
-    budget: "6.9",
+    budget: "13.2",
+  },
+  {
+    id: "2",
+    name: "Saarthak",
+    post: "Software Lead",
+    pname: "CEO",
+    priority: "Extreme",
+    pbg: "error.main",
+    budget: "10.2",
   },
   {
     id: "3",
     name: "Atharva",
     post: "Coustumer Care",
-    pname: "Labourer",
+    pname: "DayCare",
     priority: "minimal",
     pbg: "success.main",
     budget: "0.2",
   },
 ];
 
-const TeamOverview = () => {
+interface Props {
+  appointments: Appointment[];
+}
+
+const TeamOverview = ({ appointments: appointmentsProp }: Props) => {
+  const [appointments, setAppointments] =
+    useState<Appointment[]>(appointmentsProp);
   return (
     <div className="bg-white rounded-3xl relative flex justify-center lg:py-10  md:px-10 md:py-5 p-5 w-full shadow-lg scale-90   mt-2 lg:mt-10 ">
-      <p className="text-2xl absolute -mt-5">Team</p>
+      <p className="text-2xl absolute -mt-5">Appointments</p>
       <Table
         aria-label="simple table"
         sx={{
@@ -60,12 +68,12 @@ const TeamOverview = () => {
             </TableCell>
             <TableCell>
               <Typography color="textSecondary" variant="h6">
-                Assigned
+                Name
               </Typography>
             </TableCell>
             <TableCell>
               <Typography color="textSecondary" variant="h6">
-                Name
+                Phone
               </Typography>
             </TableCell>
             <div className="flex">
@@ -78,7 +86,7 @@ const TeamOverview = () => {
                 }}
               >
                 <Typography color="textSecondary" variant="h6">
-                  Priority
+                  Test Type
                 </Typography>
               </TableCell>
 
@@ -91,15 +99,15 @@ const TeamOverview = () => {
                 }}
               >
                 <Typography color="textSecondary" variant="h6">
-                  Budget
+                  Date
                 </Typography>
               </TableCell>
             </div>
           </TableRow>
         </TableHead>
         <TableBody>
-          {products.map((product) => (
-            <TableRow key={product.name}>
+          {appointments.map((appointment) => (
+            <TableRow key={appointment._id}>
               <TableCell>
                 <Typography
                   sx={{
@@ -107,7 +115,7 @@ const TeamOverview = () => {
                     fontWeight: "500",
                   }}
                 >
-                  {product.id}
+                  {appointment._id.slice(0, 5)}
                 </Typography>
               </TableCell>
               <TableCell>
@@ -124,22 +132,20 @@ const TeamOverview = () => {
                         fontWeight: "600",
                       }}
                     >
-                      {product.name}
+                      {appointment.paitent_name}
                     </Typography>
                     <Typography
                       color="textSecondary"
                       sx={{
                         fontSize: "13px",
                       }}
-                    >
-                      {product.post}
-                    </Typography>
+                    ></Typography>
                   </Box>
                 </Box>
               </TableCell>
               <TableCell>
                 <Typography color="textSecondary" variant="h6">
-                  {product.pname}
+                  {appointment.phone}
                 </Typography>
               </TableCell>
               <Box
@@ -151,20 +157,13 @@ const TeamOverview = () => {
                   mt: 3,
                 }}
               >
-                <TableCell>
-                  <Chip
-                    sx={{
-                      pl: "4px",
-                      pr: "4px",
-                      backgroundColor: product.pbg,
-                      color: "#fff",
-                    }}
-                    size="small"
-                    label={product.priority}
-                  ></Chip>
+                <TableCell align="right">
+                  <Typography variant="h6">{appointment.speciality}</Typography>
                 </TableCell>
                 <TableCell align="right">
-                  <Typography variant="h6">${product.budget}k</Typography>
+                  <Typography variant="h6">
+                    <TimeAgo date={appointment._createdAt} />
+                  </Typography>
                 </TableCell>
               </Box>
             </TableRow>

@@ -1,4 +1,4 @@
-import type { NextPage } from "next";
+import type { GetServerSideProps, NextPage } from "next";
 import Main from "../components/Main";
 import Head from "next/head";
 import Image from "next/image";
@@ -9,8 +9,12 @@ import Login from "../components/Login";
 import { Toaster } from "react-hot-toast";
 import TeamOverview from "../components/TeamOverview";
 import Header from "../components/Header";
-
-const Home: NextPage = () => {
+import { Appointment } from "../typings";
+import { fetchPosts } from "../utils/fetchPosts";
+interface Props {
+  appointments: Appointment[];
+}
+const Home = ({ appointments }: Props) => {
   const { data: session } = useSession();
   const router = useRouter();
   if (!session) return <Login />;
@@ -25,7 +29,7 @@ const Home: NextPage = () => {
         <Sidebar />
         <div className="col-span-5">
           <Header />
-          <TeamOverview />
+          <TeamOverview appointments={appointments} />
         </div>
       </div>
     </div>
@@ -33,3 +37,12 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const appointments = await fetchPosts();
+
+  return {
+    props: {
+      appointments,
+    },
+  };
+};

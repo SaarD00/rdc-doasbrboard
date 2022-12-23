@@ -13,32 +13,31 @@ const activities = [
   {
     time: "8:00",
     color: "success.main",
-    text: "History Class",
+    text: "First Activity",
   },
   {
     time: "08:40",
     color: "secondary.main",
-    text: "English class",
+    text: "Second Activity",
   },
   {
     time: "9:15",
     color: "primary.main",
-    text: "Break",
+    text: "Third Activity",
   },
   {
     time: "09.48",
     color: "warning.main",
-    text: "I will sing amongus theme song",
+    text: "Fourth Activity",
   },
   {
     time: "09.49",
     color: "error.main",
-    text: "Becoming lord saardoo",
+    text: "fifth activities",
   },
 ];
 
 const Activity = () => {
-  
   return (
     <div className="bg-white rounded-3xl   shadow-lg mt-5 p-5 py-5">
       <p className="mb-2">Daily Activity</p>
